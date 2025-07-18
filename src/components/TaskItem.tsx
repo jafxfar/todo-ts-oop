@@ -18,6 +18,12 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onToggle, onDelete }) => {
             <span style={{ textDecoration: task.isCompleted ? 'line-through' : 'none' }}>
                 {task.name}
             </span>
+            <span style={{ color: task.category?.color }}>
+                {task.category?.name}
+            </span>
+            <span style={{ color: task.urgent?.color }}>
+                {task.urgent?.name}
+            </span>
             <button onClick={() => onDelete(task.id)}>Удалить</button>
         </div>
     );
